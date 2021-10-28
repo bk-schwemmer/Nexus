@@ -1,0 +1,61 @@
+body {
+    background-size: cover;
+    background: #1da1dc no-repeat fixed;
+    margin: auto;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 45vh;
+    width: 40vw;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    font-size: 115%;
+}
+
+.inner_container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+input, textarea {
+    width: 250px;
+    padding: 5px;
+    margin: 1vh;
+    box-sizing: border-box;
+}
+
+input[type=text] {
+    display: inline-block;
+    width: 100%;
+}
+
+.submit_btn {
+    padding: 5px;
+    width: 100px;
+}
+
+.btn-default {
+    padding: 5px;
+    width: 65%;
+}
+
+#loader_div {
+  position: absolute;
+  top: 15vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  opacity:0.7;
+  display: none;
+  background: url('/static/preloader.gif') center center no-repeat;
+}

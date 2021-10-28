@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+    // ajaxStart & ajaxComplete are used to show/hide the preloader gif after button click event
+        $(document).ajaxStart(function() {
+                $('#loader_div').show();
+              })
+    // ajax function to allow python function to run in background without refreshing webpage
+        $(function() {
+          $('a#emp_button').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_emp_list',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+        $(document).ajaxComplete(function() {
+                $('#loader_div').hide();
+              })
+    </script>
+    <div class="container">
+        <div class="inner_container">
+            <div class="emp_list_button">
+                <form>
+                    <a href=# id="emp_button"><button class="btn btn-default">Get Employee List</button></a>
+                </form>
+                <p>
+                    <a href="{{ url_for('download_file') }}">Download</a>
+                </p>
+            </div>
+            <div class="timer-box">
+                <p>Last update: {{ last_execute }}</p>
+            </div>
+        </div>
+        <div id="loader_div"></div>
+    </div>
+{% endblock %}
