@@ -1,6 +1,9 @@
 body {
+    /*background: #1da1dc no-repeat fixed;*/
+    background-image: url('blackhole2.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    background: #1da1dc no-repeat fixed;
+    background-color: black;
     margin: auto;
 }
 
@@ -9,10 +12,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    height: 45vh;
-    width: 40vw;
-    border-radius: 10px;
+    background-color: dimgrey;
+    height: 20vh;
+    width: 35vw;
+    border-radius: 40px;
     padding-bottom: 10px;
     font-size: 115%;
 }
@@ -24,6 +27,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 80%;
 }
 
 input, textarea {
@@ -57,5 +61,5 @@ input[type=text] {
   z-index: 99;
   opacity:0.7;
   display: none;
-  background: url('/static/preloader.gif') center center no-repeat;
+  background: url('/static/bike.gif') center center no-repeat;
 }

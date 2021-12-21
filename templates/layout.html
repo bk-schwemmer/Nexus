@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>Nexus</title>
     <link rel="stylesheet" href="/static/style.css">
-
+    <script type="text/javascript" src="{{ url_for('static', filename='jQuery.js') }}"></script>
 </head>
 <body>
     <div class="mainContainer">
-        {% block content %} {% endblock %}
+        {% block content %}
+            {% for message in get_flashed_messages() %}
+                <div class="alert-error">Error: {{ message }}</div>
+            {% endfor %}
+        {% endblock %}
     </div>
 </body>
 </html>

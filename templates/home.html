@@ -25,14 +25,13 @@
         <div class="inner_container">
             <div class="emp_list_button">
                 <form>
-                    <a href=# id="emp_button"><button class="btn btn-default">Get Employee List</button></a>
+                    <a href=# id="emp_button"><button class="btn btn-default">Initiate Nexus</button></a>
+                    <a href=# id="overwrite_button"><button class="btn btn-default" onclick="confirm_overwrite();get_date();">
+                        Overwrite Temp File</button></a>
                 </form>
                 <p>
                     <a href="{{ url_for('download_file') }}">Download</a>
                 </p>
-            </div>
-            <div class="timer-box">
-                <p>Last update: {{ last_execute }}</p>
             </div>
         </div>
         <div id="loader_div"></div>

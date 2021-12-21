@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bold-maps-api-1562088768419",
+  "private_key_id": "295fa4aed9b10f6af536fe0d87c7428779f37fff",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDT3NAObnj70HCb\n6KSD1+zAM5JGFZnu8Rme2qDr5CbBYtjG8dfOv86EsaazZ4G4M4xKkF4ds0CP5Ag3\nDOfZhIU3GK04kxUaMgNHw0HOFeVTDUdwFUV0xOtNxoVwTiwQ41zWt43auzRTqlCR\nNL2tTAvsJyJNX32PJc0yZRURMAt03Wf7QsST19loY41LarXVLAiqj7Ey00lX1sVV\nA/PtIOkhMpTYkAtTMSOR3rrW+T5ijHMcuGDg+M+lKN3w7B7OET+1dCwzteyR45kA\nR2JpSN9Pb2yODuZ20V1N+XmUpMg3or7yj+Io7Q+skuxpB6mrzZh9iZ+rs2SK0+sf\nagJK8AWLAgMBAAECggEARWehmxCyvp+2vESW3IA4lXBvm1kJQB8oywMJU62+ynyU\n0nu4vIjWYV8HYt9mPg9ZBrZLtsQZwumrjUlDjN0efQGvAYkhkR7QN0qufJJsuWvw\nurWlNs8p3KVL4pIhWnj5WXfxVzYbusrhMOiLuMFgaIEbeihtrB7wnXFC2QoZvrMO\n82NSynBHyKzZ+0+9LY5nXJTzQNPdHN2BYrIGThtUzsHUfHxmj7WKBSEFL2T0aD2D\nQY6uyrJd90NJTRy85T4z/aoyiuNRXStDZLCaLLTn9Cwzl48S6/RyIEjK+tzincop\nR3A3lBIPLR8cBPS1F57S23l2o0fnHI5OPT5ebdsuCQKBgQDugAK/IzMXCm1FiXfC\no0GXUTHkjdJpXUgJEPOwH3HDH4gWfcui/D18JveC8dP6W1UxlySHEqFFV1/yhqOb\nkihYCCISwL4qWXI3DHF1DBAiilElVUiY24n6gKbrMGJhbbFXfS6YnhrzvgvW/lDC\n8yjRDUwCUY1Uc3MOblHyQUrpwwKBgQDjaHFdu7o8y88sjSKuc0H7pgV5ohASl8ph\ntqQrNv6OgB+JHLLg/weeKBxsyl5p0ZI6tNm9EJ53s3Z7pdSo9iFHQrHsXSSNwWk/\n8jO++f1zKziAbG1MKE9teiX5wKQvA0OHdIDwZVSTz/mqJI0z7K++S5Osi9XGTQHO\nqCHEQjdwmQKBgBwwYSK6RFWa0+N+JfuJVD1QSXdcE9yEO/lmWYcdkFKhrXILGECB\nU7sS1/pQHt/eX6lm1dhpKUqK0zpVE41VrxMIkw5oXZGf1NIQ1HAjJt0OQB0LgXMf\nr6U+A3yU0Wv2jRlsIE/FkCXy9m9Iy77fApoC2lMD1JKAur6f52ucsAAFAoGBAJWV\nrQSQKLg3BCb1C3we+qcylOVmchYY3Jobzq9SdG1938CMLSoM95DUJ6Z0E1id7wdI\n0PUpimOInAZHlbQyer9qIqkst4+7SqUyh1E3Fb19D6SCLf7rgRutPm+jhRwblH70\nZqA6t0CnjD2b33npVczh39ie/tZ67xZlyBhVyiv5AoGAFG69pebfFmtlSBz/1hoe\nE2/1yHK8ollqRWx8ddgsOtYVeEaOEN7fW7XMk3w0bApFcex7pJ2RN7ImD78xswYT\nLbvbAoQtEca6Q7yAV0UO2ugszp+yWhkCXJty0pw18VmN2I3sbqGzfCAi/IBefiku\n/74n5ssRwDcQ9vEbe8V1PAo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nexus-google-sheets@bold-maps-api-1562088768419.iam.gserviceaccount.com",
+  "client_id": "110112786291827868411",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nexus-google-sheets%40bold-maps-api-1562088768419.iam.gserviceaccount.com"
+}
