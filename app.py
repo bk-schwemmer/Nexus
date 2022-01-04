@@ -246,11 +246,11 @@ def repairQ_file():
 
     counter2 = 0
     for i in job_title:
-        if i == 'Service Leader':
+        if i == 'Service Leader' or i == 'Service Manager':
             loc_roles[counter2] = loc_roles[counter2].format(position=sr_tech)
-        elif i == 'Operation Manager':
+        elif i == 'Operation Manager' or i == 'Assistant Manager' or i == 'ASM':
             loc_roles[counter2] = loc_roles[counter2].format(position=ops_mgr)
-        elif i == 'Store Leader':
+        elif i == 'Store Leader' or i == 'Store Manager':
             loc_roles[counter2] = loc_roles[counter2].format(position=store_ldr)
 
         counter2 += 1
@@ -368,4 +368,4 @@ def download_file():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='10.100.100.43')
+    app.run(debug=True, host='192.168.10.100')
