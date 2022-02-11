@@ -63,3 +63,8 @@ input[type=text] {
   display: none;
   background: url('/static/bike.gif') center center no-repeat;
 }
+
+#embed {
+    text-align: center;
+    padding-bottom: 10px;
+}

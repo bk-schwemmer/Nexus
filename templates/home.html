@@ -19,14 +19,30 @@
         });
         $(document).ajaxComplete(function() {
                 $('#loader_div').hide();
+
+                // Show 'No new hires' on webpage based on variable value
+                fetch('/log')
+                    .then(function (response) {
+                        return response.json();
+                    }).then(function (text) {
+                        console.log('GET response:');
+                        console.log(text.no_new_hires);
+                        if (text.no_new_hires === 'No new hires found') {
+                            // $('#embed').show();
+                            document.getElementById('embed').style.display = 'block';
+                        }
+                });
+
               })
     </script>
     <div class="container">
         <div class="inner_container">
+            <p id="embed" style="display: none">{{ no_new_hires }}</p>
+            <p id="overW" hidden>Overwrite Successful</p>
             <div class="emp_list_button">
                 <form>
                     <a href=# id="emp_button"><button class="btn btn-default">Initiate Nexus</button></a>
-                    <a href=# id="overwrite_button"><button class="btn btn-default" onclick="confirm_overwrite();get_date();">
+                    <a href=# id="overwrite_button"><button class="btn btn-default" onclick="confirm_overwrite();">
                         Overwrite Temp File</button></a>
                 </form>
                 <p>

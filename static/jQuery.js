@@ -7,7 +7,7 @@ function confirm_overwrite() {
                     e.preventDefault()
                     $.getJSON('/background_overwrite',
                         function(data) {
-                      //do nothing
+                      // $('#overW').show();
                     });
                     return false;
                   });
@@ -16,3 +16,11 @@ function confirm_overwrite() {
                 return;
             }
         }
+
+/*fetch('/log')
+    .then(function (response) {
+        return response.json();
+    }).then(function (text) {
+        console.log('GET response:');
+        console.log(text.no_new_hires);
+});*/

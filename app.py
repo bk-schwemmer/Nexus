@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect, send_file, request, flash
+from flask import Flask, render_template, url_for, redirect, send_file, request, flash, jsonify, session
 from werkzeug.security import generate_password_hash, check_password_hash
 import pandas as pd
 import requests
@@ -11,6 +11,7 @@ from openpyxl.worksheet.dimensions import ColumnDimension, DimensionHolder
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import sqlite3
+import sys
 
 app = Flask(__name__)
 app.secret_key = 'lxclnsdlwerjoi2394890875602j34lksdlrr902830jiajsdf908sd8f34jl35609spdj'
@@ -20,6 +21,8 @@ hash_pass = generate_password_hash('St@rTr3k$ucks!')
 
 global last_execute
 last_execute = 'November 17, 2021'
+
+set_new_hires = {'no_new_hires': '', 'key_error': ''}
 
 
 def get_date():
@@ -73,16 +76,19 @@ def compare_lists():
         df1_empIDs = df1['employeeID'].tolist()
         df2_empIDs = df2['employeeID'].tolist()
     except KeyError:
-        print('KeyError: Possible API failure')
+        set_new_hires['key_error'] = 'KeyError: Possible API failure'
+        print('KeyError: Possible API failure', file=sys.stderr)
         raise
 
+    no_new_hires = ''
     # Iterate through lists looking for new additions
     new_empIDs = []
     for i in df1_empIDs:
         if i not in df2_empIDs:
             new_empIDs.append(i)
     while len(new_empIDs) == 0:
-        print('No new hires found')
+        set_new_hires['no_new_hires'] = 'No new hires found'
+        print('No new hires found', file=sys.stdout)
         new_empIDs.append('No new hires found')
 
     # Add new additions to list and export to excel
@@ -231,7 +237,7 @@ def repairQ_file():
                 if job_title[counter] == 'Apple Specialist':
                     full_code = j + specialist
                     loc_roles.append(full_code)
-                elif job_title[counter] == 'Senior Apple Specialist':
+                elif job_title[counter] == 'Senior Apple Specialist' or job_title[counter] == 'Senior Specialist':
                     full_code = j + sr_specialist
                     loc_roles.append(full_code)
                 elif job_title[counter] == 'Technician':
@@ -317,10 +323,13 @@ def zip_files():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-    try:
-        return render_template('home.html', last_execute=last_execute)
-    except Exception as e:
-        return str(e)
+    if request.method == 'POST':
+        try:
+            return render_template('home.html', no_new_hires=set_new_hires['no_new_hires'])
+        except Exception as e:
+            return str(e)
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/')
@@ -333,6 +342,17 @@ def login():
         else:
             return render_template('home.html')
     return render_template('login.html', error=error)
+
+
+@app.route('/log', methods=['GET', 'POST'])
+def log_to_console():
+    if request.method == 'GET':
+        message = {'no_new_hires': set_new_hires['no_new_hires']}
+        return jsonify(message)
+
+    if request.method == 'POST':
+        print(request.get_json())
+        return 'Success', 200
 
 
 @app.route('/background_emp_list')
@@ -352,7 +372,9 @@ def background_overwrite():
     df1_empIDs = df1['employeeID'].tolist()
     df2_empIDs = df2['employeeID'].tolist()
     overwrite_file(df1_empIDs, df2_empIDs)
+    set_new_hires = {'no_new_hires': '', 'key_error': ''}
     try:
+        session.clear()
         return 'nothing'
     except Exception as e:
         return str(e)
